@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+<script type="application/javascript">
+function loadJSON()
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+
+var JSONObject = JSON.parse(xmlhttp.responseText);
+
+
+document.getElementsByName("nombre")[0].value= JSONObject.usuario;
+
+document.getElementsByName("pass")[0].value= JSONObject.password;
+
+
+//document.getElementById("Usuario").innerHTML = JSONObject.usuario;
+//document.getElementById("Password").innerHTML = JSONObject.password;
+ 
+}
+}
+xmlhttp.open("GET","http://localhost:8080/restFull/services/usuario",true);
+xmlhttp.send();
+
+}
+</script>
+
+<title>Usuario Alex</title>
+</head>
+<body onload=loadJSON()>
+<form>
+	<label for="nombre">Usuario:</label>	
+	<input  name="nombre" type="text" value="" maxlength="10" size="20"></input><br></br>
+	
+	<label for="pass">Password:</label>	
+	<input  name="pass" type="text" value="" maxlength="10" size="20"></input><br></br>
+	
+	
+</form>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div ng-controller="controlador2">
+    <form action="/" id="myLogin">
+    <h1>Log in</h1>
+    <fieldset id="inputs">
+        <input type="text" id="username" placeholder="Usuario" autofocus required ng-model="user"><br>
+        <input type="password" id="password" placeholder="Contrase&ntilde;a" required ng-model="password"><br>        
+       </fieldset>
+       <fieldset id="actions">
+        <button type="button" ng-click="submit()" >Ingresar</button>
+       	<a href="">Olvidaste tu contrase&ntilde;a?</a> <a href="">Registrar</a>
+       </fieldset>
+    </form>
+</div>
